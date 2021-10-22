@@ -12,9 +12,56 @@
       <button onClick="window.location.reload()">Restart Game</button>
       <button onclick="resetTeams()">Reset Teams</button>
      </h1>
+     <h3 id="team1name" style="color: white;"></h3>
+<div style="background: black; margin-bottom: 20px;">
+        <table style="width: 100%; color: white;">
+          <thead>
+                <tr style="font-size: 24px; font-weight: bold;">
+                  <th style="text-align: center;">SCORE</th>
+                  <th id="team1score"></th>
+                </tr>
+          </thead>
+          <tbody>
+                <tr>
+                  <td>Total Goals</td>
+                  <td id="team1goals"></td>
+                </tr>
+                <tr>
+                  <td>Total Penalty</td>
+                  <td id="team1penalty"></td>
+                </tr>
+                <tr>
+                  <td>Yellow Cards</td>
+                  <td id="team1yellow"></td>
+                </tr>
+                <tr>
+                  <td>Red Cards</td>
+                  <td id="team1red"></td>
+                </tr>
+          </tbody>
+        </table>
+</div>
+<table style="background: white; width: 100%; margin-bottom: 10px;">
+	<thead>
+	  <tr>
+		<th>Goalkeeper</th>
+		<th>Block</th>
+		<th>Miss</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td id="team1player11name"></td>
+		<td id="team1goalsblock"></td>
+		<td id="team1goalsmiss"></td>
+	  </tr>
+	</tbody>
+</table>
 
-<script>
-  function resetTeams() {
-     window.location.href = "/";
-  }
-</script>
+     <script>
+       function resetTeams() {
+       window.location.href = "/";
+      }
+     </script>
+    </body>
+</html>
