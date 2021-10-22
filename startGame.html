@@ -11,6 +11,8 @@
     	var battling = true;
 var playerHp = 1100;
 var enemyHp = 1090;
+var enemyGoal = 0;
+var playerGoal = 0;
 
 //Player's Attack Turn
 var playerTurn = function(){
@@ -32,6 +34,7 @@ var enemyTurn = function(){
 
     if(enemyAccuracy > 3){
         playerHp -= enemyAttackDamage;
+        enemyGoal += 1;
         alert("Bahamut attacks!  You suffer"+" "+enemyAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
         alert("Porto missed a 1 vs 1!");
@@ -44,6 +47,7 @@ var battle = function(){
         playerTurn();
         if(enemyHp <= 0){
             alert("Victory!");
+            alert(enemyGoal);
             battling = false;
         }
         if(enemyHp > 0){
