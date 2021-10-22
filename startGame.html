@@ -9,13 +9,13 @@
   <body>
     <script>
     	var battling = true;
-var playerHp = 20;
-var enemyHp = 100;
+var playerHp = 1100;
+var enemyHp = 1090;
 
 //Player's Attack Turn
 var playerTurn = function(){
-    var playerAccuracy = Math.floor(Math.random()* 3 + 1);
-    var playerAttackDamage = Math.floor(Math.random()* 20 + 1);
+    var playerAccuracy = Math.floor(Math.random()* 800 + 1);
+    var playerAttackDamage = Math.floor(Math.random()* 10 + 1);
 
     if(playerAccuracy > 1){
         enemyHp -= playerAttackDamage;
@@ -27,8 +27,8 @@ var playerTurn = function(){
 
 //Enemy's Attack Turn
 var enemyTurn = function(){
-    var enemyAccuracy = Math.floor(Math.random()* 5 + 1);
-    var enemyAttackDamage = Math.floor(Math.random()* 5 + 1);
+    var enemyAccuracy = Math.floor(Math.random()* 800 + 1);
+    var enemyAttackDamage = Math.floor(Math.random()* 20 + 1);
 
     if(enemyAccuracy > 3){
         playerHp -= enemyAttackDamage;
