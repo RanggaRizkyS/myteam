@@ -1,19 +1,307 @@
 <!DOCTYPE html>
-</html>
-<head>
-	<title>MyTEAM</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="https://ibb.co/c3w0RKg" rel="icon">
-    <link href="style.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ed783f9c3f.js" crossorigin="anonymous"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-</head>
-<body>
-	<img src="https://cdn.discordapp.com/attachments/856509962569121792/900198189662101524/lineup.png" class="lineup">
-	<div class="gk" style="display: inline">
-		<h4 style="display: inline">Sáyçenisy <h4 style="color: #238BFF; display: inline;">Rating: 73</h4></h4>
-	</div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Football Game</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Football Game</h1>
+    <div id="teambox" style="max-width: 800px; margin: auto;">
+      <h2>Select Teams</h2>
+      <form onsubmit="storeTeamAndStartPlay(event)">
+        <div style="display: flex;">
+          <div style="background: darkred; flex-grow: 1; padding: 10px;">
+            <h3 style="color: white;">Your Team</h3>
+            <input
+              type="text"
+              required
+              id="team1"
+              name="team1"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <h3 style="color: white;">Players</h3>
+            <input
+              type="text"
+              required
+              id="team1player1"
+              name="team1player1"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player2"
+              name="team1player2"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player3"
+              name="team1player3"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player4"
+              name="team1player4"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player5"
+              name="team1player5"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player6"
+              name="team1player6"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player7"
+              name="team1player7"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player8"
+              name="team1player8"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player9"
+              name="team1player9"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team1player10"
+              name="team1player10"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <h6 style="color: white;">Goal Keeper</h6>
+            <input
+              type="text"
+              required
+              id="team1player11"
+              name="team1player11"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+          </div>
+          <div style="background: blue; flex-grow: 1; padding: 10px;">
+            <h3 style="color: white;">Computer's Team</h3>
+            <input
+              type="text"
+              required
+              id="team2"
+              name="team2"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <h3 style="color: white;">Players</h3>
+            <input
+              type="text"
+              required
+              id="team2player1"
+              name="team2player1"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player2"
+              name="team2player2"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player3"
+              name="team2player3"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player4"
+              name="team2player4"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player5"
+              name="team2player5"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player6"
+              name="team2player6"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player7"
+              name="team2player7"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player8"
+              name="team2player8"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player9"
+              name="team2player9"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <input
+              type="text"
+              required
+              id="team2player10"
+              name="team2player10"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+            <h6 style="color: white;">Goal Keeper</h6>
+            <input
+              type="text"
+              required
+              id="team2player11"
+              name="team2player11"
+              value=""
+              style="width: 100%; padding: 5px; box-sizing: border-box;"
+            />
+          </div>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <input
+            style="width: 200px; height: 60px; font-size: 24px;"
+            type="submit"
+            value="Let's Play"
+          />
+        </div>                                                                                                                                                                                                             </form>
+    </div>
+    <script>
+      function storeOrDisplayTeams() {
+        var teams = window.localStorage.getItem("teams");
+        if (teams) {
+          teams = JSON.parse(teams);
+          Object.keys(teams).forEach(function (team) {
+            document.getElementById(`${team}`).value = teams[team].name;
+            Object.keys(teams[team].players).forEach(function (player) {
+              document.getElementById(`${team}${player}`).value =
+                teams[team].players[player];
+            });
+          });
+        } else {
+          window.localStorage.setItem(
+            "teams",
+            JSON.stringify({
+              team1: {
+                name: "FC Barcelona",
+                players: {
+                  player1: "Lionel Messi",
+                  player2: "S. Dest",
+                  player3: "Gerard P.",
+                  player4: "Ronald A.",
+                  player5: "Sergio B.",
+                  player6: "Carles A.",
+                  player7: "A. Griezmann",
+                  player8: "Miralem P.",
+                  player9: "M. Braithwaite",
+                  player10: "Ousmane D.",
+                  player11: "Neto"
+                }
+              },
+              team2: {
+                name: "Juventus F.C.",
+                players: {
+                  player1: "Giorgio Chiellini",
+                  player2: "Matthijs de Ligt",
+                  player3: "Arthur",
+                  player4: "Sami Khedira",
+                  player5: "Cristiano Ronaldo",
+                  player6: "Aaron Ramsey",
+                  player7: "Adrien Rabiot",
+                  player8: "Alex Sandro",
+                  player9: "Danilo",
+                  player10: "Paulo Dybala",
+                  player11: "Wojciech Szczęsny"
+                }
+              }
+            })
+          );
+
+          storeOrDisplayTeams();
+        }
+      }
+
+      function storeTeamAndStartPlay(ev) {
+        ev.preventDefault();
+        // Store current form values
+        // Teams and Players
+
+        var teams = {};
+
+        ["team1", "team2"].forEach(function (team) {
+          teams[team] = {
+            name: document.getElementById(`${team}`).value,
+            players: {}
+          };
+          for (var i = 1; i <= 11; i++) {
+            teams[team].players["player" + i] = document.getElementById(
+              `${team}player${i}`
+            ).value;
+          }
+        });
+
+        window.localStorage.setItem("teams", JSON.stringify(teams));
+        location.href = "startGame.html";
+      }
+
+      storeOrDisplayTeams();
+    </script>
+  </body>
 </html>
