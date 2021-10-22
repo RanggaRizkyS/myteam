@@ -60,7 +60,9 @@ var battle = function(){
         if(enemyHp > 0){
         enemyTurn();
            if(playerHp <= 0){
-               alert("Defeat!");
+               document.getElementById("result").textContent="Defeat";
+               document.getElementById("score").textContent=enemyGoal;
+               document.getElementById("scorePlayer").textContent=playerGoal;
                battling = false;
            }
         }
