@@ -14,7 +14,7 @@
     </div>
     <script>
         var myArray = ['Benzema', 'Hazard', 'Asensio', 'Vinicius', 'Kross', 'Casemiro'];
-        var rand = myArray[(Math.random() * myArray.length) | 0]
+        var rand = myArray[(Math.random() * myArray.length) | 1]
     	var battling = true;
 var playerHp = 1100;
 var enemyHp = 1090;
@@ -43,7 +43,7 @@ var enemyTurn = function(){
     if(enemyAccuracy > 3){
         playerHp -= enemyAttackDamage;
         enemyGoal += 1;
-        alert("Bahamut attacks!  You suffer"+" "+enemyAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
+        alert("Bahamut attacks!  You suffer"+" "+rand+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
         alert("Porto missed a 1 vs 1!");
     }
