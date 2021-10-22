@@ -57,7 +57,7 @@ var battle = function(){
     while(battling){
         playerTurn();
         if(enemyHp <= 0){
-        	sleep(500).then(() => {
+        	sleep(5000).then(() => {
                 document.getElementById("score").textContent=enemyGoal;
                 document.getElementById("scorePlayer").textContent=playerGoal;
                     if(enemyGoal <= playerGoal){
