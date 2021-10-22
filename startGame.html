@@ -109,6 +109,63 @@
        function resetTeams() {
        window.location.href = "/";
       }
+      var stats = {
+   turn  : 1,
+   team1 : {
+              goalkeeper : {
+                  block : 0,  // Count of goalkeeper blocks
+                  miss  : 0,  // Count of goalkeeper miss
+              },
+              player1 : {
+                  goal    : 0, // Total goals by player 1
+                  penalty : 0, // Total penalty points
+                  yellow  : 0, // Total yellow cards received by player1
+                  red     : 0, // Total red cards received by player 1
+              },
+              ....  // For all 10 players
+           },
+   team2 : {
+              ...   // Same as team1
+           },
+};
+     function fillStatTable() {
+        ["team1", "team2"].forEach(function (team) {
+          var totGoals = 0;
+          var totPenalty = 0;
+          var totYellow = 0;
+          var totRed = 0;
+          Object.keys(stats[`${team}`]).forEach(function (player) {
+                if (player !== "goalkeeper") {
+                  document.getElementById(`${team}${player}goal`).innerText =
+                        stats[`${team}`][`${player}`].goal;
+                  document.getElementById(`${team}${player}penalty`).innerText =
+                        stats[`${team}`][`${player}`].penalty;
+                  document.getElementById(`${team}${player}yellow`).innerText =
+                        stats[`${team}`][`${player}`].yellow;
+                  document.getElementById(`${team}${player}red`).innerText =
+                        stats[`${team}`][`${player}`].red;
+
+                  totGoals += stats[`${team}`][`${player}`].goal;
+                  totPenalty += stats[`${team}`][`${player}`].penalty;
+                  totYellow += stats[`${team}`][`${player}`].yellow;
+                  totRed += stats[`${team}`][`${player}`].red;
+                }
+          });
+
+          document.getElementById(`${team}goals`).innerText = totGoals;
+          document.getElementById(`${team}penalty`).innerText = totPenalty;
+          document.getElementById(`${team}yellow`).innerText = totYellow;
+          document.getElementById(`${team}red`).innerText = totRed;
+
+          document.getElementById(`${team}score`).innerText =
+                totGoals * 3 - totPenalty;
+
+          document.getElementById(`${team}goalsblock`).innerText =
+                stats[`${team}`].goalkeeper.block;
+          document.getElementById(`${team}goalsmiss`).innerText =
+                stats[`${team}`].goalkeeper.miss;
+        });
+}
      </script>
     </body>
 </html>
