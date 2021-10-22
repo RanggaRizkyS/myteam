@@ -225,7 +225,7 @@
     </div>
     <script>
       function storeOrDisplayTeams() {
-        window.localStorage.removeItem(oldKey);
+        var teams = window.localStorage.getItem("teams");
         if (teams) {
           teams = JSON.parse(teams);
           Object.keys(teams).forEach(function (team) {
