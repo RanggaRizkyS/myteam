@@ -52,9 +52,14 @@ var battle = function(){
     while(battling){
         playerTurn();
         if(enemyHp <= 0){
-            document.getElementById("result").textContent="Victory";
             document.getElementById("score").textContent=enemyGoal;
             document.getElementById("scorePlayer").textContent=playerGoal;
+                if(enemyGoal <= playerGoal){
+                	document.getElementById("result").textContent="Victory";
+                }
+                if(playerGoal <= enemyGoal){
+                	document.getElementById("result").textContent="Defeat";
+                }
             battling = false;
         }
         if(enemyHp > 0){
