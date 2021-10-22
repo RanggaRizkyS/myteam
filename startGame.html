@@ -21,7 +21,7 @@ var playerTurn = function(){
         enemyHp -= playerAttackDamage;
         alert("Your attack hits.  Bahamut suffers"+" "+playerAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
-        alert("Your attack missed!");
+        alert("Your team missed a 1 vs 1!");
     }
 };
 
@@ -34,7 +34,7 @@ var enemyTurn = function(){
         playerHp -= enemyAttackDamage;
         alert("Bahamut attacks!  You suffer"+" "+enemyAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
-        alert("Bahamut misses!");
+        alert("Porto missed a 1 vs 1!");
     }
 };
 
