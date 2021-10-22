@@ -10,7 +10,7 @@
     <div style="text-align: center">
       <span id="result"></span>
       <h1>-----------------------</h1>
-      <span id="scorePlayer"></span> <span style="margin-left: 25px" id="scoreEnemy"></span>
+      <span id="scorePlayer"></span> <span style="margin-left: 25px" id="score"></span>
     </div>
     <script>
     	var battling = true;
@@ -26,6 +26,7 @@ var playerTurn = function(){
 
     if(playerAccuracy > 1){
         enemyHp -= playerAttackDamage;
+        playerGoal += 1;
         alert("Your attack hits.  Bahamut suffers"+" "+playerAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
         alert("Your team missed a 1 vs 1!");
@@ -53,6 +54,7 @@ var battle = function(){
         if(enemyHp <= 0){
             document.getElementById("result").textContent="Victory";
             document.getElementById("score").textContent=enemyGoal;
+            document.getElementById("scorePlayer").textContent=playerGoal;
             battling = false;
         }
         if(enemyHp > 0){
