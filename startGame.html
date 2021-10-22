@@ -8,6 +8,7 @@
   </head>
   <body>
     <span id="result"></span>
+    <span id="score"></span>
     <script>
     	var battling = true;
 var playerHp = 1100;
@@ -47,8 +48,8 @@ var battle = function(){
     while(battling){
         playerTurn();
         if(enemyHp <= 0){
-            alert("Victory!\n");
-            alert(enemyGoal);
+            document.getElementById("result").textContent="Victory";
+            document.getElementById("score").textContent=enemyGoal;
             battling = false;
         }
         if(enemyHp > 0){
