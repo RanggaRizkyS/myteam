@@ -31,7 +31,7 @@ var playerTurn = function(){
         playerGoal += 1;
         alert("Gabriel Jesus scored");
     }else{
-        alert("Manchester City missed a 1 vs 1!");
+        alert("Courtois saves a shot by Gabriel Jesus");
     }
 };
 
@@ -45,12 +45,12 @@ var enemyTurn = function(){
         enemyGoal += 1;
         alert("Benzema scored");
     }else{
-        alert("Real Madrid missed a 1 vs 1!");
+        alert("Ederson saves a shot by Benzema");
     }
 };
 
 var battle = function(){
-    alert("Battle Start!");
+    alert("Kick off\nManchester City VS Real Madrid");
     while(battling){
         playerTurn();
         if(enemyHp <= 0){
