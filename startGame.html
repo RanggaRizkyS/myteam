@@ -57,6 +57,54 @@
 	  </tr>
 	</tbody>
 </table>
+<table style="background: white; width: 100%;">
+        <thead>
+          <tr>
+                <th>Player</th>
+                <th>Goal</th>
+                <th>Penalty</th>
+                <th>
+                  <span
+                        style="
+                          height: 25px;
+                          width: 15px;
+                          background: yellow;
+                          display: block;
+                          box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                        "
+                  ></span>
+                </th>
+                <th>
+                  <span
+                        style="
+                          height: 25px;
+                          width: 15px;
+                          background: red;
+                          display: block;
+                          box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                        "
+                  ></span>
+                </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+                <td id="team1player1name"></td>
+                <td id="team1player1goal"></td>
+                <td id="team1player1penalty"></td>
+                <td id="team1player1yellow"></td>
+                <td id="team1player1red"></td>
+          </tr>
+          ...  // Same code for 8 other players with appropriate id.
+          <tr>
+                <td id="team1player10name"></td>
+                <td id="team1player10goal"></td>
+                <td id="team1player10penalty"></td>
+                <td id="team1player10yellow"></td>
+                <td id="team1player10red"></td>
+          </tr>
+        </tbody>
+</table>
 
      <script>
        function resetTeams() {
