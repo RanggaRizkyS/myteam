@@ -7,21 +7,107 @@
     <title>Football Game</title>
   </head>
   <body>
+    <script>
+      if (!window.localStorage.getItem("teams")) window.location.href = "/";
+    </script>
+    <div style="max-width: 800px; margin: auto;">
       <h1 style="text-align: center;">
         Football Game
-      <button onClick="window.location.reload()">Restart Game</button>
-      <button onclick="resetTeams()">Reset Teams</button>
-     </h1>
-     <h3 id="team1name" style="color: white;"></h3>
-<div style="background: black; margin-bottom: 20px;">
-        <table style="width: 100%; color: white;">
-          <thead>
-                <tr style="font-size: 24px; font-weight: bold;">
+        <button onClick="window.location.reload()">Restart Game</button>
+        <button onclick="resetTeams()">Reset Teams</button>
+      </h1>
+      <div
+        id="outcomeBlock"
+        style="
+          display: none;
+          position: fixed;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          text-align: center;
+        "
+      >
+        <img id="outcomeImage" src="" style="width: 500px; margin: auto;" />
+        <h2
+          id="outcomeMessage"
+          style="color: #e5e5e5; background: black; padding: 20px;"
+        ></h2>
+      </div>
+      <div
+        id="resultBlock"
+        style="
+          display: none;
+          position: fixed;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          text-align: center;
+        "
+      >
+        <div
+          style="
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: auto;
+          "
+        >
+          <h1
+            id="resultHeading"
+            style="text-align: center; font-family: Helvetica; color: red;"
+          ></h1>
+          <h3 id="resultOutcome"></h3>
+          <blockquote
+            style="
+              background: #f0f0f0;
+              padding: 10px;
+              display: block;
+              font-style: italic;
+              font-size: 20px;
+            "
+          >
+            <b>Commentators Views:</b>
+            <br /><br /><span id="resultCommentary"></span>
+          </blockquote>
+          <p>
+            Later, commentator was found in garbage truck. We suspect,
+            <span id="resultteam1name"></span> fans were behind it.
+          </p>
+          <div>
+            <button onClick="window.location.reload()">Restart Game</button>
+            <button onclick="resetTeams()">Reset Teams</button>
+          </div>
+          <h2 style="font-size: 30px;">Help by 1 Share Please !! <br />??</h2>
+          <a
+            href="http://twitter.com/share?text=Messi+Vs+Ronaldo+-+Football+game+in+javascript+and+localstorage+@ARMittal+@JavaScript+@reactjs+%23football+%23Messi+%23Ronaldo+%23100DaysOfCode+%23javascript+%23rea>
+            target="_blank"
+          >
+            <img
+              style="width: 100%;"
+              src="https://findmymarathon.com/images/Twitter-Social-Share-Button.png"
+            />
+          </a>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 90px;">
+        <div style="background: darkred; flex-grow: 1; padding: 10px;">
+          <h3 id="team1name" style="color: white;"></h3>
+          <div style="background: black; margin-bottom: 20px;">
+            <table style="width: 100%; color: white;">
+              <thead>
+              	<tr style="font-size: 24px; font-weight: bold;">
                   <th style="text-align: center;">SCORE</th>
                   <th id="team1score"></th>
                 </tr>
-          </thead>
-          <tbody>
+              </thead>
+              <tbody>
                 <tr>
                   <td>Total Goals</td>
                   <td id="team1goals"></td>
@@ -38,109 +124,348 @@
                   <td>Red Cards</td>
                   <td id="team1red"></td>
                 </tr>
-          </tbody>
-        </table>
-</div>
-<table style="background: white; width: 100%; margin-bottom: 10px;">
-	<thead>
-	  <tr>
-		<th>Goalkeeper</th>
-		<th>Block</th>
-		<th>Miss</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr>
-		<td id="team1player11name"></td>
-		<td id="team1goalsblock"></td>
-		<td id="team1goalsmiss"></td>
-	  </tr>
-	</tbody>
-</table>
-<table style="background: white; width: 100%;">
-        <thead>
-          <tr>
+              </tbody>
+            </table>
+          </div>
+          <table style="background: white; width: 100%; margin-bottom: 10px;">
+            <thead>
+              <tr>
+                <th>Goalkeeper</th>
+                <th>Block</th>
+                <th>Miss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="team1player11name"></td>
+                <td id="team1goalsblock"></td>
+                <td id="team1goalsmiss"></td>
+              </tr>
+            </tbody>
+          </table>
+          <table style="background: white; width: 100%;">
+            <thead>
+              <tr>
                 <th>Player</th>
                 <th>Goal</th>
                 <th>Penalty</th>
                 <th>
                   <span
-                        style="
-                          height: 25px;
-                          width: 15px;
-                          background: yellow;
-                          display: block;
-                          box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-                        "
+                    style="
+                      height: 25px;
+                      width: 15px;
+                      background: yellow;
+                      display: block;
+                      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                    "
                   ></span>
                 </th>
                 <th>
                   <span
-                        style="
-                          height: 25px;
-                          width: 15px;
-                          background: red;
-                          display: block;
-                          box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-                        "
+                    style="
+                      height: 25px;
+                      width: 15px;
+                      background: red;
+                      display: block;
+                      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                    "
                   ></span>
                 </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td id="team1player1name"></td>
                 <td id="team1player1goal"></td>
                 <td id="team1player1penalty"></td>
                 <td id="team1player1yellow"></td>
                 <td id="team1player1red"></td>
-          </tr>
-          <tr>
+              </tr>
+              <tr>
+                <td id="team1player2name"></td>
+                <td id="team1player2goal"></td>
+                <td id="team1player2penalty"></td>
+                <td id="team1player2yellow"></td>
+                <td id="team1player2red"></td>
+              </tr>
+              <tr>
+                <td id="team1player3name"></td>
+                <td id="team1player3goal"></td>
+                <td id="team1player3penalty"></td>
+                <td id="team1player3yellow"></td>
+                <td id="team1player3red"></td>
+              </tr>
+              <tr>
+                <td id="team1player4name"></td>
+                <td id="team1player4goal"></td>
+                <td id="team1player4penalty"></td>
+                <td id="team1player4yellow"></td>
+                <td id="team1player4red"></td>
+              </tr>
+              <tr>
+                <td id="team1player5name"></td>
+                <td id="team1player5goal"></td>
+                <td id="team1player5penalty"></td>
+                <td id="team1player5yellow"></td>
+                <td id="team1player5red"></td>
+              </tr>
+              <tr>
+                <td id="team1player6name"></td>
+                <td id="team1player6goal"></td>
+                <td id="team1player6penalty"></td>
+                <td id="team1player6yellow"></td>
+                <td id="team1player6red"></td>
+              </tr>
+              <tr>
+                <td id="team1player7name"></td>
+                <td id="team1player7goal"></td>
+                <td id="team1player7penalty"></td>
+                <td id="team1player7yellow"></td>
+                <td id="team1player7red"></td>
+              </tr>
+              <tr>
+                <td id="team1player8name"></td>
+                <td id="team1player8goal"></td>
+                <td id="team1player8penalty"></td>
+                <td id="team1player8yellow"></td>
+                <td id="team1player8red"></td>
+              </tr>
+              <tr>
+                <td id="team1player9name"></td>
+                <td id="team1player9goal"></td>
+                <td id="team1player9penalty"></td>
+                <td id="team1player9yellow"></td>
+                <td id="team1player9red"></td>
+              </tr>
+              <tr>
                 <td id="team1player10name"></td>
                 <td id="team1player10goal"></td>
                 <td id="team1player10penalty"></td>
                 <td id="team1player10yellow"></td>
                 <td id="team1player10red"></td>
-          </tr>
-        </tbody>
-</table>
-     <div
-  style="
-        width: 200px;
-        border-left: 1px solid #000;
-        border-right: 1px solid #000;
-        background: pink;
-        flex-shrink: 0;
-  "
->
-  <span
-        id="turnString"
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="background: blue; flex-grow: 1; padding: 10px;">
+          <h3 id="team2name" style="color: white;"></h3>
+          <div style="background: black; margin-bottom: 20px;">
+            <table style="width: 100%; color: white;">
+              <thead>
+                <tr style="font-size: 24px; font-weight: bold;">
+                  <th style="text-align: center;">SCORE</th>
+                  <th id="team2score"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total Goals</td>
+                  <td id="team2goals"></td>
+                </tr>
+                <tr>
+                  <td>Total Penalty</td>
+                  <td id="team2penalty"></td>
+                </tr>
+                <tr>
+                  <td>Yellow Cards</td>
+                  <td id="team2yellow"></td>
+                </tr>
+                <tr>
+                  <td>Red Cards</td>
+                  <td id="team2red"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <table style="background: white; width: 100%; margin-bottom: 10px;">
+            <thead>
+              <tr>
+                <th>Goalkeeper</th>
+                <th>Block</th>
+                <th>Miss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="team2player11name"></td>
+                <td id="team2goalsblock"></td>
+                <td id="team2goalsmiss"></td>
+              </tr>
+            </tbody>
+          </table>
+          <table style="background: white; width: 100%;">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Goal</th>
+                <th>Penalty</th>
+                <th>
+                  <span
+                    style="
+                      height: 25px;
+                      width: 15px;
+                      background: yellow;
+                      display: block;
+                      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                    "
+                  ></span>
+                </th>
+                <th>
+                  <span
+                    style="
+                      height: 25px;
+                      width: 15px;
+                      background: red;
+                      display: block;
+                      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                    "
+                  ></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="team2player1name"></td>
+                <td id="team2player1goal"></td>
+                <td id="team2player1penalty"></td>
+                <td id="team2player1yellow"></td>
+                <td id="team2player1red"></td>
+              </tr>
+              <tr>
+                <td id="team2player2name"></td>
+                <td id="team2player2goal"></td>
+                <td id="team2player2penalty"></td>
+                <td id="team2player2yellow"></td>
+                <td id="team2player2red"></td>
+              </tr>
+              <tr>
+                <td id="team2player3name"></td>
+                <td id="team2player3goal"></td>
+                <td id="team2player3penalty"></td>
+                <td id="team2player3yellow"></td>
+                <td id="team2player3red"></td>
+              </tr>
+              <tr>
+                <td id="team2player4name"></td>
+                <td id="team2player4goal"></td>
+                <td id="team2player4penalty"></td>
+                <td id="team2player4yellow"></td>
+                <td id="team2player4red"></td>
+              </tr>
+              <tr>
+                <td id="team2player5name"></td>
+                <td id="team2player5goal"></td>
+                <td id="team2player5penalty"></td>
+                <td id="team2player5yellow"></td>
+                <td id="team2player5red"></td>
+              </tr>
+              <tr>
+                <td id="team2player6name"></td>
+                <td id="team2player6goal"></td>
+                <td id="team2player6penalty"></td>
+                <td id="team2player6yellow"></td>
+                <td id="team2player6red"></td>
+              </tr>
+              <tr>
+                <td id="team2player7name"></td>
+                <td id="team2player7goal"></td>
+                <td id="team2player7penalty"></td>
+                <td id="team2player7yellow"></td>
+                <td id="team2player7red"></td>
+              </tr>
+              <tr>
+                <td id="team2player8name"></td>
+                <td id="team2player8goal"></td>
+                <td id="team2player8penalty"></td>
+                <td id="team2player8yellow"></td>
+                <td id="team2player8red"></td>
+              </tr>
+              <tr>
+                <td id="team2player9name"></td>
+                <td id="team2player9goal"></td>
+                <td id="team2player9penalty"></td>
+                <td id="team2player9yellow"></td>
+                <td id="team2player9red"></td>
+              </tr>
+              <tr>
+                <td id="team2player10name"></td>
+                <td id="team2player10goal"></td>
+                <td id="team2player10penalty"></td>
+                <td id="team2player10yellow"></td>
+                <td id="team2player10red"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        id="commentaryBox"
         style="
-          text-align: center;
-          font-size: 20px;
-          display: block;
-          font-family: Helvetica;
-          font-weight: bold;
-          color: yellow;
-          text-shadow: 1px 1px 0px black, -1px 1px 0px black,
-                1px -1px 0 black, -1px -1px 0px black;
+          position: fixed;
+          bottom: 0;
+          height: 80px;
+          background: #aaa;
+          width: 100%;
+          left: 0;
+          display: flex;
+          border-top: 1px solid #000;
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
         "
-        >Your Turn</span
-  >
-  <div style="display: flex;">
+      >
+        <div style="width: 100px; background: cyan; flex-shrink: 0;">
+        	<span style="text-align: center; display: block; font-weight: bold;"
+            >Help Us! ?</span
+          >
+          <div>
+            <a
+              href="http://twitter.com/share?text=Messi+Vs+Ronaldo+-+Football+game+in+javascript+and+localstorage+@ARMittal+@JavaScript+@reactjs+%23football+%23Messi+%23Ronaldo+%23100DaysOfCode+%23javascript+%23r>
+              target="_blank"
+            >
+              <img
+                style="width: 100%; margin-top: 10px;"
+                src="https://www.nextgenerationchiropractor.com/wp-content/uploads/2010/08/TweetButton-300x128.png"
+              />
+            </a>
+          </div>
+        </div>
         <div
           style="
+            width: 200px;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            background: pink;
+            flex-shrink: 0;
+          "
+        >
+          <span
+            id="turnString"
+            style="
+              text-align: center;
+              font-size: 20px;
+              display: block;
+              font-family: Helvetica;
+              font-weight: bold;
+              color: yellow;
+              text-shadow: 1px 1px 0px black, -1px 1px 0px black,
+                1px -1px 0 black, -1px -1px 0px black;
+            "
+            >Your Turn</span
+          >
+          <div style="display: flex;">
+            <div
+              style="
                 width: 50px;
                 text-align: center;
                 font-size: 24px;
                 line-height: 15px;
                 font-weight: bold;
-          "
-        >
-          <span id="totalTurnCounter"></span><br />----<br />6
-        </div>
-        <div style="flex-grow: 1;">
-          <span
+              "
+            >
+              <span id="totalTurnCounter"></span><br />----<br />6
+            </div>
+            <div style="flex-grow: 1;">
+              <span
                 id="turnCounter"
                 style="
                   font-size: 50px;
@@ -151,112 +476,36 @@
                   text-shadow: 0 0 3px white;
                   display: none;
                 "
-          ></span>
-          <div id="playButton" style="text-align: center;">
+              ></span>
+              <div id="playButton" style="text-align: center;">
                 <button
                   style="
-                        font-size: 30px;
-                        font-family: Helvetica;
-                        font-weight: bold;
-                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-                        background: green;
-                        color: white;
-                        cursor: pointer;
-                        border-radius: 8px;
+                    font-size: 30px;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+                    background: green;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 8px;
                   "
                   onClick="playTurn()"
                 >
                   Press !!!
                 </button>
+              </div>
+            </div>
           </div>
         </div>
-  </div>
-</div>
-     <div style="flex-grow: 1; background: gainsboro; padding: 0 10px;">
-    <span style="font-weight: bold;">Commentator: </span>
-    <span id="commentaryText"></span>
-</div>
-     <div
-        id="outcomeBlock"
-        style="
-          position: fixed;
-          z-index: 2;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          text-align: center;
-        "
->
-        <img id="outcomeImage" src="" style="width: 500px; margin: auto;" />
-        <h2
-          id="outcomeMessage"
-          style="color: #e5e5e5; background: black; padding: 20px;"
-        ></h2>
-</div>
-     <div
-        id="resultBlock"
-        style="
-          position: fixed;
-          z-index: 2;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          text-align: center;
-        "
-  >
-        <div
-          style="
-                max-width: 400px;
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                margin: auto;
-          "
-        >
-          <h1
-                id="resultHeading"
-                style="text-align: center; font-family: Helvetica; color: red;"
-          ></h1>
-          <h3 id="resultOutcome"></h3>
-          <blockquote
-                style="
-                  background: #f0f0f0;
-                  padding: 10px;
-                  display: block;
-                  font-style: italic;
-                  font-size: 20px;
-                "
-          >
-                <b>Commentators Views:</b>
-                <br /><br /><span id="resultCommentary"></span>
-          </blockquote>
-          <p>
-                Later, commentator was found in garbage truck. We suspect,
-                <span id="resultteam1name"></span> fans were behind it.
-          </p>
-          <div>
-                <button onClick="window.location.reload()">Restart Game</button>
-                <button onclick="resetTeams()">Reset Teams</button>
-          </div>
-          <h2 style="font-size: 30px;">Help by 1 Share Please !! <br />??</h2>
-          <a
-                href="http://twitter.com/share?text=Messi+Vs+Ronaldo+-+Football+game+in+javascript+and+localstorage+@ARMittal+@JavaScript+@reactjs+%23football+%23Messi+%23Ronaldo+%23100DaysOfCode+%23javascript+%2>
-                target="_blank"
-          >
-                <img
-                  style="width: 100%;"
-                  src="https://findmymarathon.com/images/Twitter-Social-Share-Button.png"
-                />
-          </a>
+        <div style="flex-grow: 1; background: gainsboro; padding: 0 10px;">
+          <span style="font-weight: bold;">Commentator: </span>
+          <span id="commentaryText"></span>
         </div>
-</div>
+      </div>
+    </div>
 
-     <script>
-       function resetTeams() {
+    <script>
+      function resetTeams() {
        window.location.href = "/";
       }
       var stats = {
@@ -316,6 +565,7 @@
                 stats[`${team}`].goalkeeper.miss;
         });
 }
-     </script>
-    </body>
+    </script>
+  </body>
 </html>
+        	
