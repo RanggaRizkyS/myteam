@@ -13,13 +13,8 @@
       <span id="scorePlayer"></span> <span style="margin-left: 25px" id="score"></span>
     </div>
     <script>
-    	let users = [
-          "Vinicius JR.",
-          "Hazard",
-          "Benzema",
-          "Asensio"
-        ];
-        var straikerReal = {users[Math.floor(Math.random() * users.length)]}
+        var myArray = ['Benzema', 'Hazard', 'Asensio', 'Vinicius', 'Kross', 'Casemiro'];
+        var rand = myArray[(Math.random() * myArray.length) | 0]
     	var battling = true;
 var playerHp = 1100;
 var enemyHp = 1090;
@@ -34,7 +29,7 @@ var playerTurn = function(){
     if(playerAccuracy > 1){
         enemyHp -= playerAttackDamage;
         playerGoal += 1;
-        alert("Your attack hits.  Bahamut suffers"+" "+straikerReal+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
+        alert("Your attack hits.  Bahamut suffers"+" "+rand+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
         alert("Your team missed a 1 vs 1!");
     }
