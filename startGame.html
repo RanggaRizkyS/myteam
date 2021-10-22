@@ -27,9 +27,9 @@ var playerTurn = function(){
     if(playerAccuracy > 1){
         enemyHp -= playerAttackDamage;
         playerGoal += 1;
-        console.log("Your attack hits.  Bahamut suffers"+" "+playerAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
+        alert("Your attack hits.  Bahamut suffers"+" "+playerAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
-        console.log("Your team missed a 1 vs 1!");
+        alert("Your team missed a 1 vs 1!");
     }
 };
 
@@ -41,14 +41,14 @@ var enemyTurn = function(){
     if(enemyAccuracy > 3){
         playerHp -= enemyAttackDamage;
         enemyGoal += 1;
-        console.log("Bahamut attacks!  You suffer"+" "+enemyAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
+        alert("Bahamut attacks!  You suffer"+" "+enemyAttackDamage+" "+"damage!\nCloud:"+" "+playerHp+"HP\nBahamut:"+" "+enemyHp+"HP");
     }else{
-        console.log("Porto missed a 1 vs 1!");
+        alert("Porto missed a 1 vs 1!");
     }
 };
 
 var battle = function(){
-    console.log("Battle Start!");
+    alert("Battle Start!");
     while(battling){
         playerTurn();
         if(enemyHp <= 0){
@@ -59,6 +59,9 @@ var battle = function(){
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
+                }
+                if(playerGoal = enemyGoal){
+                	document.getElementById("result").textContent="Draw";
                 }
                 battling = false;
         }
@@ -72,6 +75,9 @@ var battle = function(){
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
+                }
+                if(playerGoal = enemyGoal){
+                	document.getElementById("result").textContent="Draw";
                 }
                battling = false;
            }
