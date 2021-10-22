@@ -195,6 +195,65 @@
           style="color: #e5e5e5; background: black; padding: 20px;"
         ></h2>
 </div>
+     <div
+        id="resultBlock"
+        style="
+          position: fixed;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          text-align: center;
+        "
+  >
+        <div
+          style="
+                max-width: 400px;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                margin: auto;
+          "
+        >
+          <h1
+                id="resultHeading"
+                style="text-align: center; font-family: Helvetica; color: red;"
+          ></h1>
+          <h3 id="resultOutcome"></h3>
+          <blockquote
+                style="
+                  background: #f0f0f0;
+                  padding: 10px;
+                  display: block;
+                  font-style: italic;
+                  font-size: 20px;
+                "
+          >
+                <b>Commentators Views:</b>
+                <br /><br /><span id="resultCommentary"></span>
+          </blockquote>
+          <p>
+                Later, commentator was found in garbage truck. We suspect,
+                <span id="resultteam1name"></span> fans were behind it.
+          </p>
+          <div>
+                <button onClick="window.location.reload()">Restart Game</button>
+                <button onclick="resetTeams()">Reset Teams</button>
+          </div>
+          <h2 style="font-size: 30px;">Help by 1 Share Please !! <br />??</h2>
+          <a
+                href="http://twitter.com/share?text=Messi+Vs+Ronaldo+-+Football+game+in+javascript+and+localstorage+@ARMittal+@JavaScript+@reactjs+%23football+%23Messi+%23Ronaldo+%23100DaysOfCode+%23javascript+%2>
+                target="_blank"
+          >
+                <img
+                  style="width: 100%;"
+                  src="https://findmymarathon.com/images/Twitter-Social-Share-Button.png"
+                />
+          </a>
+        </div>
+</div>
 
      <script>
        function resetTeams() {
