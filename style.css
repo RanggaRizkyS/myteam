@@ -43,3 +43,50 @@ body{
 	width: 150px;
 	float: left;
 }
+
+.vs{
+	float: left;
+	width: calc(100% - 300px);
+	text-align: center;
+	color: white;
+	padding-top: 40px;
+	font-family: 'Open Sans';
+}
+
+.left_team .team_container,
+.right_team .team_container{
+	font-family: 'Open Sans';
+	font-size: 18px;
+	color: white;
+	text-align: right;
+	font-weight: 300;
+	width: 100%;
+}
+
+.right_team .team_container{
+	text-align: left;
+}
+
+.left_team .team_container span,
+.right_team .team_container span{
+	font-size: 40px;
+	width: 100%;
+	clear: both;
+	display: block;
+	margin-left: -6px;
+	font-weight: 600;
+}
+
+.right_team .team_container span{
+	margin-left: 6px;
+}
+
+.start{
+	width: 100%;
+	font-family: 'Open Sans';
+	font-size: 16px;
+	color: white;
+	display: block;
+	text-align: center;
+	padding-top: 30px;
+}
