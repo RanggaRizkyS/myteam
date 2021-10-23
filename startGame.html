@@ -73,21 +73,6 @@ var playerTurn = function(){
 var enemyTurn = function(){
     var enemyAccuracy = Math.floor(Math.random()* 20 + 1);
     var enemyAttackDamage = Math.floor(Math.random()* 800 + 10);
-
-    let i = 0;
-
-do {
-
-  task(i);
-
-  i++;
-
-} while (enemyHp > 0) {
-
-function task(i) {
-
-  setTimeout(function() {
-
     if(enemyAccuracy > 3){
         playerHp -= enemyAttackDamage;
         enemyGoal += 1;
@@ -95,9 +80,6 @@ function task(i) {
     }else{
         alert("Ederson saves a shot by Benzema");
     }
-
-  }, 2000 * i);
-}
 };
 
 var battle = function(){
