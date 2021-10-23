@@ -20,7 +20,7 @@
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 while (no < 90) {
-  console.log(no++);
+  sleep(1000).then(() => { console.log(no++); });
   no++;
 }
     </script>
