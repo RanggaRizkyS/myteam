@@ -90,3 +90,15 @@ body{
 	text-align: center;
 	padding-top: 30px;
 }
+
+.fact_card{
+	width: 700px;
+	height: 300px;
+	background-color: rgba(85, 85, 85, 0.8);
+	border: solid 5px #555555;
+	display: block;
+	margin: 50px auto;
+	overflow-y: auto;
+	box-sizing: border-box;
+	padding: 20px;
+}
