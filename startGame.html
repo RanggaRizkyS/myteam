@@ -72,7 +72,6 @@ var playerHp = 1100;
 var enemyHp = 1090;
 var enemyGoal = 0;
 var playerGoal = 0;
-var yes = playerGoal -= 0;
 
 //Player's Attack Turn
 var playerTurn = function(){
@@ -110,6 +109,7 @@ var battle = function(){
             document.getElementById("scorePlayer").textContent=playerGoal;
                 if(enemyGoal <= playerGoal){
                 	document.getElementById("result").textContent="Victory";
+                    var yes = playerGoal -= 1;
                     document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + "Goal";
                 }
                 if(playerGoal <= enemyGoal){
