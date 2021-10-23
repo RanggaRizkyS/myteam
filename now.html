@@ -15,18 +15,14 @@
           <h6 id="minutes"></h6>
       </div>
       <script>
-      	function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
       	funtion randUpTo(number){
       	    return Math.floor(Math.random() * number) + 1;
           }
-          console.log("hxueb");
-          sleep(10);
-          console.log("end");
+          function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+console.log("Hello");
+sleep(2000).then(() => { console.log("World!"); });
   </body>
 </html>
