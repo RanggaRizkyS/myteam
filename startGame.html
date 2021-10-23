@@ -13,9 +13,9 @@
       <span id="scorePlayer"></span> <span style="margin-left: 25px" id="score"></span>
     </div>
     <div style="text-align: button; font-size: 25px;">
-    	<span id="playerName"></span>
+    	<span>Name: </span><span id="playerName"></span>
         <h6>-------------------------------------<h6>
-        <span id="playerPos"></span>
+        <span>Position: </span><span id="playerPos"></span>
     </div>
     <script>
     	let users = [
@@ -35,6 +35,7 @@ if (person == null || person == "") {
   let person = prompt("Please write your name!\nPlease enter your name", "Forter");
 } else {
   console.log("Your name: " + person + "\nYour Position: " + positionQuicker + "!");
+  document.getElementById("playerName").textContent= person;
 }
     	var battling = true;
 var playerHp = 1100;
