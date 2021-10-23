@@ -13,8 +13,19 @@
       <span id="scorePlayer"></span> <span style="margin-left: 25px" id="score"></span>
     </div>
     <script>
-        var myArray = ['Benzema', 'Hazard', 'Asensio', 'Vinicius', 'Kross', 'Casemiro'];
-        var rand = myArray[Math.floor(Math.random() * myArray.length)]
+    	let users = [
+          "PewDiePie",
+          "T-Series",
+          "Sans",
+          "Zero"
+        ];
+    	let person = prompt("Please write your name", "Forter");
+let text;
+if (person == null || person == "") {
+  text = "User cancelled the prompt.";
+} else {
+  text = "Your name: " + person + "\nYour Position: ";
+}
     	var battling = true;
 var playerHp = 1100;
 var enemyHp = 1090;
