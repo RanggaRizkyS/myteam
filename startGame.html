@@ -14,17 +14,18 @@
     </div>
     <script>
     	let users = [
-          "PewDiePie",
-          "T-Series",
-          "Sans",
-          "Zero"
+          "Forward",
+          "Mid Filders",
+          "Defender",
+          "GK"
         ];
+        let positionQuicker = users[Math.floor(Math.random() * users.length)]
     	let person = prompt("Please write your name", "Forter");
 let text;
 if (person == null || person == "") {
   text = "User cancelled the prompt.";
 } else {
-  text = "Your name: " + person + "\nYour Position: ";
+  text = "Your name: " + person + "\nYour Position: " + positionQuicker + "!";
 }
     	var battling = true;
 var playerHp = 1100;
