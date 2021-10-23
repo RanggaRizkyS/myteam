@@ -42,6 +42,7 @@ $(document).ready(function(){
 				
 				if(parseInt($('span[data-id="' + teams[0] + '"]').text()) > parseInt($('span[data-id="' + teams[1] + '"]').text())){
 					$('.fact_card').append('<p class="one_event">' + teams[0] + ' wins!</p>');
+				}
 			}
 		}, 200);
 	});
