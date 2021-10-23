@@ -4,25 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script scr="script.js"></script>
     <title>Football Game</title>
   </head>
   <body>
-  	<div id="title" style="text-align: center">
-  	    <h2>AI FOOTBALL</h2>
+  	<div class="score_card">
+  	
       </div>
-      <div id="comp" style="text-align: center; font-family: sans-serif;">
-      	<span id="playerScore"></span>    <span id="enemyScore"></span>
-          <h6 id="minutes"></h6>
-      </div>
-      <script>
-      	var no = 0;
-          function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-while (no < 45) {
-  sleep(1000).then(() => { console.log(no++); });
-  no++
-}
-    </script>
   </body>
 </html>
