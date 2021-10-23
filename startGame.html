@@ -82,7 +82,6 @@ var playerTurn = function(){
         enemyHp -= playerAttackDamage;
         playerGoal += 1;
         alert("Gabriel Jesus scored");
-        document.getElementById("box1").textContent= "Gabriel Jesus Scored";
     }else{
         alert("Courtois saves a shot by Gabriel Jesus");
     }
@@ -110,6 +109,7 @@ var battle = function(){
             document.getElementById("scorePlayer").textContent=playerGoal;
                 if(enemyGoal <= playerGoal){
                 	document.getElementById("result").textContent="Victory";
+                    document.getElementById("result").textContent="box1
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
