@@ -36,3 +36,10 @@ body{
 	overflow: hidden;
 }
 
+.left_team,
+.right_team{
+	height: 100%
+	display: block;
+	width: 150px;
+	float: left;
+}
