@@ -83,6 +83,7 @@ var playerHp = 1100;
 var enemyHp = 1090;
 var enemyGoal = 0;
 var playerGoal = 0;
+var yes = playerGoal -= 1;
 
 //Player's Attack Turn
 var playerTurn = function(){
@@ -121,13 +122,12 @@ var battle = function(){
                 if(enemyGoal <= playerGoal){
                 	document.getElementById("result").textContent="Victory";
                     enemyGoal -= 1;
-                    playerGoal -= 1;
-                    document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + " Goal";
+                    document.getElementById("box1").textContent="Gabriel Jesus scored " +  + " Goal";
                     document.getElementById("box2").textContent=pickRandom + " Scored 1 Goal";
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
-                    playerGoal -= 1;
+                    playerGoal -= G
                     var enemyMin = enemyGoal -= 1;
                     document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + " Goal";
                     document.getElementById("box2").textContent=pickRandom + " Scored 1 Goal";
