@@ -136,6 +136,12 @@ var battle = function(){
                 }
                 if(playerGoal == enemyGoal){
                 	document.getElementById("result").textContent="Draw";
+                    var enemyMin = enemyGoal -= 1;
+                    var yes = playerGoal -= 1;
+                    document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + " Goal";
+                    document.getElementById("box2").textContent=pickRandom + " Scored 1 Goal";
+                    document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
+                    document.getElementById("box4").textContent=pick2r + " Scored 1 Goal";
                 }
                 battling = false;
         }
