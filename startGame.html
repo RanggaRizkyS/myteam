@@ -125,7 +125,7 @@ var battle = function(){
                     document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + " Goal";
                     document.getElementById("box2").textContent=pickRandom + " Scored 1 Goal";
                 }
-                if(playerGoal <= enemyGoal){
+                if(playerGoal<= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
                     var enemyMin = enemyGoal -= 1;
                     var yes = playerGoal -= 1;
