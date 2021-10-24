@@ -36,6 +36,15 @@
             "Foden"
         ];
         let pickRandom = pick1[Math.floor(Math.random() * pick1.length)]
+        let pick2 = [
+            "Toni Kross",
+            "Vinicius",
+            "Asensio", 
+            "Hazard",
+            "Casemiro",
+            "Luka Modric"
+        ];
+        let pick2r = pick2[Math.floor(Math.random() * pick2.length)]
     	var no = 0;
         var noP = no += 1;
     	let users = [
@@ -118,6 +127,10 @@ var battle = function(){
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
+                    enemyGoal -= 1;
+                    playerGoal -= 1;
+                    document.getElementById("box3").textContent="Gabriel Jesus scored " + yes + " Goal";
+                    document.getElementById("box4").textContent=pickRandom + " Scored 1 Goal";
                 }
                 if(playerGoal == enemyGoal){
                 	document.getElementById("result").textContent="Draw";
