@@ -127,9 +127,9 @@ var battle = function(){
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
-                    enemyGoal -= 1;
                     playerGoal -= 1;
-                    document.getElementById("box3").textContent="Benzema scored " + yes + " Goal";
+                    var enemyMin = enemyGoal -= 1;
+                    document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
                     document.getElementById("box4").textContent=pick2r + " Scored 1 Goal";
                 }
                 if(playerGoal == enemyGoal){
