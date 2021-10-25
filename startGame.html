@@ -124,10 +124,18 @@ var battle = function(){
                     var yes = playerGoal -= 1;
                     document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + " Goal";
                     document.getElementById("box2").textContent=pickRandom + " Scored 1 Goal";
-                    document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
-                    document.getElementById("box4").textContent=pick2r + " Scored 1 Goal";
+                    if(enemyGoal <= 1){
+                    	document.getElementById("box3").textContent="Benzema scored " + 0 + " Goal";
+                    }
+                    if(enemyGoal => 1){
+                    	document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
+                    }
+                    if(enemyGoal => 2){
+                    	document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
+                        document.getElementById("box4").textContent=pick2r + " Scored 1 Goal";
+                    }
                 }
-                if(playerGoal<= enemyGoal){
+                if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
                     var enemyMin = enemyGoal -= 1;
                     var yes = playerGoal -= 1;
@@ -158,8 +166,16 @@ var battle = function(){
                     var yes = playerGoal -= 1;
                     document.getElementById("box1").textContent="Gabriel Jesus scored " + yes + " Goal";
                     document.getElementById("box2").textContent=pickRandom + " Scored 1 Goal";
-                    document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
-                    document.getElementById("box4").textContent=pick2r + " Scored 1 Goal";
+                    if(enemyGoal < 1){
+                    	document.getElementById("box3").textContent="Benzema scored " + 0 + " Goal";
+                    }
+                    if(enemyGoal > 1){
+                    	document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
+                    }
+                    if(enemyGoal > 2){
+                    	document.getElementById("box3").textContent="Benzema scored " + enemyMin + " Goal";
+                        document.getElementById("box4").textContent=pick2r + " Scored 1 Goal";
+                    }
                 }
                 if(playerGoal <= enemyGoal){
                 	document.getElementById("result").textContent="Defeat";
